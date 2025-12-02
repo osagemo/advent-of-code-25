@@ -51,6 +51,23 @@ func TestIsAnyRepeatedSequences(t *testing.T) {
 	}
 }
 
+func TestIsAnyRepeatedSequenceOptimizied(t *testing.T) {
+	tests := []struct {
+		input    string
+		expected bool
+	}{
+		{"hello", false},
+		{"hellohello", true},
+	}
+	for _, test := range tests {
+		result := IsAnyRepeatedSequencesOptimized(test.input)
+		if result != test.expected {
+			fmt.Printf("For input %v, got %v, expected %v\n", test.input, result, test.expected)
+			t.Fail()
+		}
+	}
+}
+
 func TestInvalidIdRanges(t *testing.T) {
 
 	tests := []struct {

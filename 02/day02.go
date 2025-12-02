@@ -72,6 +72,20 @@ func GetInvalidIdsFromRange(idRange string) []int {
 	return invalidIds
 }
 
+// Couldn't figure it out myself. From discussions about similar leetcode problem https://leetcode.com/problems/repeated-substring-pattern/description/
+
+// "A string consists of the same pattern repeated multiple times if and only if the string is a nontrivial rotation of itself."
+func IsAnyRepeatedSequencesOptimized(id string) bool {
+	// "If x and y are strings of the same length, then x is a rotation of y if and only if x is a substring of yy."
+
+	// id: "1212"
+	// (id + id): "12121212"
+	// (id + id)[1:]: "2121212"
+	// strings.Index(..., "1212"): 1
+	// 1 + 1 != 4 -> true
+	return strings.Index((id + id)[1:], id)+1 != len(id)
+}
+
 // Brutish, TODO: optimize
 func IsAnyRepeatedSequences(id string) bool {
 	utils.DebugLog("\nProcessing %s\n", id)
@@ -111,6 +125,7 @@ func IsRepeatedSequence(id string) bool {
 // TODO: works in regex101 for all examples but go does not support capture groups in regexp patterns :( workaround?
 // https://github.com/golang/go/issues/42549
 func IsRepeatedSequenceRegex(id string) bool {
+	// regex inspo: https://stackoverflow.com/a/2823037
 	// The whole string needs to consist of the capture group exactly twice
 	repeatedDigits, err := regexp.MatchString(`^([0-9]+)\1$`, id)
 	if err != nil {
