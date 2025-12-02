@@ -4,9 +4,8 @@ import (
 	_ "embed"
 	"fmt"
 	"strings"
-	"time"
 
-	"github.com/osagemo/advent-of-code-24/internal/utils"
+	"github.com/osagemo/advent-of-code/utils"
 )
 
 //go:embed input.txt
@@ -82,13 +81,8 @@ func parseInstruction(instruction string) (direction string, distance int) {
 }
 
 func main() {
-	input := strings.ReplaceAll(input, "\r\n", "\n")
-	input = strings.Trim(input, "\n")
+	input := utils.PrepareInput(input)
 	fmt.Println("Day 1")
-	start := time.Now()
-	fmt.Println("Part 1: ", Part1(input))
-	fmt.Println(time.Since(start))
-	start = time.Now()
-	fmt.Println("Part 2: ", Part2(input))
-	fmt.Println(time.Since(start))
+	utils.RunTimed("Part 1", func() int { return Part1(input) })
+	utils.RunTimed("Part 2", func() int { return Part2(input) })
 }
