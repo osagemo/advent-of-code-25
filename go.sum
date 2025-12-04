@@ -4,3 +4,5 @@ github.com/osagemo/advent-of-code v0.0.0-20251202124705-6bf5c4e0acf6 h1:n8784UKW
 github.com/osagemo/advent-of-code v0.0.0-20251202124705-6bf5c4e0acf6/go.mod h1:rNYcbkJLqHNYdUeT/35wY6tZcnVMjvv25nk4RqDioEM=
 github.com/osagemo/advent-of-code v0.0.0-20251203181500-6a06700df138 h1:cQNdoLqLeWgTIXwFyx4GahLoJ5ij9aZ6XOGZyVmn5W0=
 github.com/osagemo/advent-of-code v0.0.0-20251203181500-6a06700df138/go.mod h1:rNYcbkJLqHNYdUeT/35wY6tZcnVMjvv25nk4RqDioEM=
+github.com/osagemo/advent-of-code v0.0.0-20251204170533-0b7b699e51db h1:SjRR9foHEF+9RN7lXnRZ5oE48DbTimLOL243TggD7OI=
+github.com/osagemo/advent-of-code v0.0.0-20251204170533-0b7b699e51db/go.mod h1:rNYcbkJLqHNYdUeT/35wY6tZcnVMjvv25nk4RqDioEM=
